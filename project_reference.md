@@ -3,8 +3,6 @@
 we gonna use only html & css !!!!
 
 
-<img width="1252" height="656" alt="image" src="https://github.com/user-attachments/assets/6bc47a8d-3df0-4203-882b-0e951363be85" />
-
 
 
 # project intefrace : 
