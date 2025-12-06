@@ -27,6 +27,13 @@ we gonna use only html & css !!!!
 <img width="293" height="686" alt="image" src="https://github.com/user-attachments/assets/fc1a1fba-b44c-4d1f-9144-cf1f0e131fe4" />
 
 
+### hover on an option of the sorts nav bar : 
+
+
+<img width="1615" height="160" alt="image" src="https://github.com/user-attachments/assets/4b5f5af9-2d5b-4051-b52a-377554c3e6f2" />
+
+
+
 
 
 # other features : 
