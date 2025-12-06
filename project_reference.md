@@ -32,6 +32,7 @@
 # other features : 
 
 customized scroll bar 
+
 opacity increase while scrolling (when an element enters the view screen)
 
 
