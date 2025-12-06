@@ -1,0 +1,901 @@
+
+* {
+
+    padding: 0px;
+    margin: 0px; 
+    box-sizing: border-box;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* -----------------------------------------                                             root variables                                                       -------------------------------------------------------------------------------- */ 
+
+:root {
+
+
+--bg : url("https://github.com/MuammarGaddafi/WessTube/blob/main/assets/darkback.jpg?raw=true") ;
+
+--gradient-main-color : linear-gradient(to right, #a42051 , #b4504e , #ca8a4c );
+
+--text-color : white ;
+
+--main-color : black ;
+
+--weak-color : gray ;
+
+--sub-image : none ;
+
+--thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/Untitled-1.jpg?raw=true) ;
+
+--chanel-image : 
+
+
+
+
+
+}
+
+
+
+
+
+
+
+/* -----------------------------------------                            body styling                          -------------------------------------------------------------------------------- */
+
+
+body{
+
+    background-image: var(--bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* it is for scrollable backs)*/
+    font-family: 'Roboto';
+}
+
+
+/* -----------------------------------------    styling the svg and its animation while hover   -------------------------------------------------------------------------------- */
+
+/* svg transforming transition */
+svg {
+
+    width: 40px;
+    padding: 4px;
+    display: inline;
+    transition-duration: 1.5s;
+    transition-property: transform margin-right ;
+
+}
+
+/*gradient transition : */
+
+svg stop {
+
+    transition-duration: 1.5s;
+    transition-property: stop-color ;
+
+}
+
+
+
+svg:hover {
+
+    transform: rotate(-30deg)  scale(1.2);
+    margin-right: 10px;
+
+}
+
+
+
+svg:hover stop[offset="0"] {
+
+    stop-color: #480000;
+}
+
+
+svg:hover stop[offset=".46"] {
+
+    stop-color: rgb(255, 37, 113);
+}
+
+
+svg:hover stop[offset="1"] {
+
+    stop-color: rgb(255, 128, 0);
+}
+
+
+
+/* -----------------------------------------                                     scroll bar design                                           -------------------------------------------------------------------------------- */
+
+
+::-webkit-scrollbar {
+  width: 6px;              /* scrollbar width */
+}
+
+::-webkit-scrollbar-track {
+  background: black;      /* track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#ffa908 , transparent);    /* thumb color */
+  border-radius: 3px;       /* rounded corners */
+  
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------------------                                     header styling                                            -------------------------------------------------------------------------------- */
+
+
+
+header {
+
+    display : flex ; 
+    margin-top: 10px;
+    padding: 8px;
+    flex-direction: row;
+    align-items: center;
+    gap : 10px ;
+    flex-shrink: 1;
+    
+}
+
+
+
+.leftcontent {
+
+    display : flex ; 
+    align-items: center;
+    flex : 1 ;
+    flex-shrink: 1;
+    
+
+
+
+
+}
+
+.logo {
+
+    width : auto ; 
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    overflow: auto;
+    scrollbar-width: none;
+    padding-left: 3%;
+    margin-left: 4%;
+    
+}
+
+
+.logo p {
+
+    display: flex;
+    align-self: center;
+    color: var(--text-color);
+    margin-left: 4px;
+    position: relative;
+    bottom: 0.5px;
+    overflow: 0;
+
+}
+
+.leftcontent i {
+
+    font-size: 32px;
+    background: var(--gradient-main-color) ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    
+}
+
+
+.centercontent {
+
+    display: flex;
+    flex : 2 ;
+    align-items: center;
+    justify-content: center;
+    padding : 5px 0 ;
+}
+
+
+.rightcontent {
+
+    display: flex;
+    flex : 1 ;
+    align-self: center;
+    justify-content: flex-end;
+    white-space: nowrap ;
+
+}
+   
+
+.rightcontent nav a i {
+
+ background: var(--gradient-main-color) ;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+font-size: 32px;
+
+
+
+
+}
+    
+
+
+
+
+.inputbox {
+
+    background-color: transparent;
+    color: var(--text-color);
+    border: solid 1px rgb(255, 152, 68);
+    width: 70%;
+    height: 45px;
+    border-radius: 45px;
+    padding : 2% ;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    
+}
+
+.centercontent input {
+
+    all: unset;
+    width: 100%;
+
+}
+
+.centercontent button {
+
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    width : 45px ;
+    height: 45px;
+    margin : 0 2% ;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right , red   ,  orange );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 200%;
+    background-position: left;
+    animation-name: searchanimate;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate reverse;
+
+
+
+}
+
+
+@keyframes searchanimate {
+
+   0% { 
+    
+    background-position : left }
+
+    50% {
+        background-position: right;
+    }
+
+    100% {
+
+        background-position: left;
+    }
+    
+}
+
+
+
+
+
+/* -----------------------------------------                                     main                                            -------------------------------------------------------------------------------- */
+
+
+main {
+
+
+    width: 100%;
+    margin-top: 40px ;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+
+
+}
+
+.left {
+
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    height: auto ;
+    border:  1px solid rgb(255, 152, 68);
+    border-top: none;
+    border-left: none;
+    border-bottom: none;
+    border-right: none;
+    padding-right: 6px ;
+    padding-top: 6px;
+    padding-left : 16px ;
+    padding-bottom: 15px;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+
+
+.left ul {
+    
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    display: block;
+    flex-shrink: 0;
+    padding-bottom: 5px;
+
+}
+
+
+.left ul li {
+
+    transition-property: color ;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+
+hr {
+
+    
+    border:solid 0.5px rgb(255, 152, 68) ;
+    width: 90%;
+    margin: 30px auto;
+}
+
+
+li {
+
+    display: flex;
+    color: var(--text-color);
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    margin-bottom: 18px ;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+ ul li i {
+
+    background: var(--gradient-main-color) ;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 24px;
+    height: 24px;
+
+}
+
+
+.left h4 {
+
+
+    all: unset;
+    color: var(--weak-color);
+    font-size: 15px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+    
+}
+
+ .subimg {
+
+    width: 30px;
+    height:30px ;
+    border : 1px solid white ;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-image: var(--sub-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+
+ }
+
+ .left ul li:hover {
+
+    color: var(--weak-color);
+ }
+
+
+ .subimg:hover {
+
+    width: 80px;
+    height: 60px;
+    border-radius: 10%;
+    background-position: 0 30%;
+    border-color: rgb(221, 140, 110);
+
+ }
+
+
+ /* -----------------------------------------                                     sub images setup                                            -------------------------------------------------------------------------------- */
+
+
+#sub1 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/metwffi.jpg?raw=true)
+}
+
+
+ #sub2 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/yassinemami.jpg?raw=true)
+}
+
+#sub3 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/haloui.jpg?raw=true)
+}
+
+#sub4 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/WhatsApp%20Image%202025-12-02%20at%2016.30.55_cff01e4d.jpg?raw=true)
+}
+
+#sub5 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/johnny.jpg?raw=true)
+}
+
+#sub6 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/haloui%20matrix.jpg?raw=true)
+}
+
+#sub7 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/chef.jpg?raw=true)
+}
+
+
+#sub8 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/zoobak.jpg?raw=true)
+}
+
+
+#sub9 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/rommene.jpg?raw=true)
+}
+
+#sub10 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/atef.jpg?raw=true)
+}
+
+
+#sub11 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/elwech.jpg?raw=true)
+}
+
+
+#sub12 {
+
+    --sub-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/b3iwi.jpg?raw=true);
+    background-position: 10% 0;
+    background-size: 150%;
+}
+
+
+/* -----------------------------------------                                     setting the centersection                                            -------------------------------------------------------------------------------- */
+
+
+.centermain {
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+
+/* -----------------------------------------                                     setting the timeline                                            -------------------------------------------------------------------------------- */
+
+
+.sortbar {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    height: 60px;
+    column-gap: 30px;
+    color: var(--text-color);
+    justify-content: center;
+}
+
+
+.sortbar div {
+
+    font-size: 14px;
+    font-weight: 600;
+    font-style: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto ;
+    padding: 0px 7px;
+    height: 37px;
+    background-color: rgb(39 39 39) ;
+    flex-shrink: 0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.5s ease ;
+
+
+   
+}
+
+
+.sortbar div:hover {
+
+    background-color: rgb(220, 91, 0);
+}
+
+.sortbar #left {
+
+    justify-self: flex-start;
+    position: relative;
+    top: 8px;
+}
+
+.sortbar #right {
+
+    justify-self: flex-end;
+    position: relative;
+    top: 8px;
+}
+
+
+.timeline {
+
+
+    width: 100% ;
+    height:auto ;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    gap: 17px;
+    flex-wrap: wrap;
+    padding: 0px 10px ;
+    
+    padding-bottom: 30px;
+    flex-shrink: 1;
+
+
+    
+}
+
+
+.video {
+
+    width : 410px ;
+    height: 370px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap : 15px ;
+    padding: 18px;
+    background-color: transparent ;
+    transition-property: background-color ;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    flex-shrink: 0;
+
+    animation-name: onscroll;
+    animation-timing-function: linear;
+    animation-timeline: view(); 
+    animation-range: entry 0 cover 40%; /* !!!! the cover sets at which point of the screen the animations ends, so in this case the animation would be done when the element reaches 20% of the screen*/
+
+}
+
+.thumbnail {
+
+    width: 100%;
+    height: 230px  ;
+    border: solid 0.5px rgb(145, 139, 139 , 0.2);
+    border-radius: 10px;
+    background-image: var(--thumbnail-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+
+}
+
+
+.videolower {
+
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px 0px ;;
+
+}
+
+
+.profileicon {
+
+    width: 40px;
+    height:40px ;
+    border : 1px solid white ;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-image: var(--chanel-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+ }
+
+ .videodescrip {
+
+    margin-left: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 25px;
+
+ }
+
+ .videolower i {
+
+    color: white;
+    justify-self: flex-end;
+    margin-left: auto; /* !!!! that could make the element stick to the end of the container */
+ }
+
+ .videodescrip h3 {
+
+    all: unset;
+    color: var(--text-color);
+    font-size: 18px;
+    font-style: bold ;
+    height: 30px;
+
+
+
+ }
+
+ .videodescrip p {
+
+    font-size: 14px;
+    color: gray ;
+    margin-bottom: auto;
+ }
+
+
+
+.video:hover {
+
+    background-color: rgba(243, 141, 58, 0.3);
+}
+
+
+/*on scroll animation */ 
+
+@keyframes onscroll {
+    
+    from{
+        opacity: 0;
+        
+    }
+
+    to {
+        opacity: 1;
+        
+    }
+}
+
+
+
+/* -----------------------------------------                                     videos custom                                            -------------------------------------------------------------------------------- */
+
+
+
+#matrix .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/haloui%20matrix.jpg?raw=true)
+
+
+}
+#matrix .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/matrixthumb.jpg?raw=true);
+    background-position: 15%;
+}
+
+
+#rommene .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/rommene.jpg?raw=true) ;
+
+
+}
+#rommene .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/rommenethumb.jpg?raw=true);
+    background-position: 0% 60%;
+}
+
+
+
+
+#yessing .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/WhatsApp%20Image%202025-12-02%20at%2016.30.55_cff01e4d.jpg?raw=true) ;
+
+
+}
+#yessing .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/yessingthumb.jpg?raw=true);
+    
+}
+
+
+
+#haloui .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/haloui.jpg?raw=true)
+
+}
+#haloui .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/halouithumb.jpg?raw=true);
+    
+}
+
+
+#moussikiya .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/yassinemami.jpg?raw=true)
+
+}
+#moussikiya .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/moussikiya%20thumb.jpg?raw=true);
+    background-position: 20px -150px ; 
+}
+
+
+#atef .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/atef.jpg?raw=true)
+
+}
+#atef .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/atefthumb.jpg?raw=true);
+    
+}
+
+
+
+#johnny .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/johnny.jpg?raw=true)
+
+}
+#johnny .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/johnny.jpg?raw=true);
+    background-position: 0px -80px ; 
+}
+
+
+#chefsayed .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/chef.jpg?raw=true)
+
+}
+#chefsayed .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/chefsayedthumb.jpg?raw=true);
+     
+}
+
+
+#wech .videolower .profileicon {
+
+    --chanel-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/elwech.jpg?raw=true)
+
+}
+#wech .thumbnail {
+
+    --thumbnail-image : url(https://github.com/MuammarGaddafi/WessTube/blob/main/assets/wechthumb.jpg?raw=true);
+     
+}
+
+
+
+
+/* -----------------------------------------                                     media queries                                            -------------------------------------------------------------------------------- */
+
+
+
+@media (max-width: 600px) {
+  .leftcontent i {
+    margin-left: 7px;
+    font-size:24px ;
+  }
+
+
+
+  svg {
+
+    width : 50px;
+  }
+
+
+  .centercontent button {
+
+    display: none;
+  }
+
+
+.centercontent input {
+
+    width :  100% ; 
+}
+
+
+
+.rightcontent nav a i {
+
+font-size: 24px;
+
+}
+
+.left {
+
+    width: 33%;
+}
+
+}
